@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_message"
+            android:icon="@drawable/ic_my_messege"
+            android:title="@string/app.menu.message" />
+
+        <item
+            android:id="@+id/item_blog"
+            android:icon="@drawable/ic_my_blog"
+            android:title="@string/app.menu.blog" />
+
+        <item
+            android:id="@+id/item_favourite"
+            android:icon="@drawable/ic_my_event"
+            android:title="@string/app.menu.action" />
+        <item
+            android:id="@+id/item_history"
+            android:icon="@drawable/ic_my_team"
+            android:title="@string/app.menu.team" />
+
+    </group>
+
+</menu>

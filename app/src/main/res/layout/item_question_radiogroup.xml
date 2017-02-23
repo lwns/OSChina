@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.news.question.QuestionItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:checked="@{viewModel.checked}"
+            app:checkedChangeCommand="@{viewModel.checkedChangeCommand}">
+
+            <RadioButton
+                android:id="@+id/rb_question"
+                style="@style/App.Theme.Widget.Button.Radio"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_horizontal"
+                android:text="@string/app.question.tab.question"
+                android:textColor="@color/select_blog_txt" />
+
+            <RadioButton
+                android:id="@+id/rb_share"
+                style="@style/App.Theme.Widget.Button.Radio"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_horizontal"
+                android:text="@string/app.question.tab.share"
+                android:textColor="@color/select_blog_txt" />
+
+            <RadioButton
+                android:id="@+id/rb_composite"
+                style="@style/App.Theme.Widget.Button.Radio"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_horizontal"
+                android:text="@string/app.question.tab.composite"
+                android:textColor="@color/select_blog_txt" />
+
+            <RadioButton
+                android:id="@+id/rb_job"
+                style="@style/App.Theme.Widget.Button.Radio"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_horizontal"
+                android:text="@string/app.question.tab.job"
+                android:textColor="@color/select_blog_txt" />
+
+            <RadioButton
+                android:id="@+id/rb_server"
+                style="@style/App.Theme.Widget.Button.Radio"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center_horizontal"
+                android:text="@string/app.question.tab.server"
+                android:textColor="@color/select_blog_txt" />
+
+        </RadioGroup>
+
+        <include layout="@layout/include_line_h" />
+    </LinearLayout>
+</layout>

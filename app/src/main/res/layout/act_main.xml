@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.MainViewModel" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        tools:context=".feature.main.MainActivity"
+        tools:openDrawer="start">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/include_main_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:viewModel="@{viewModel}" />
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="@dimen/app.navigation.width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/app.theme.background"
+            android:fitsSystemWindows="true"
+            app:itemTextColor="@color/app.text.black"
+            app:menu="@menu/navigation_main"
+            tools:headerLayout="@layout/include_navigation_header" />
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>

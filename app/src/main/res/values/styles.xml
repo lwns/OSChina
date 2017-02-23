@@ -1,0 +1,88 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="App.Theme.Context" parent="App.Theme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="App.Theme.Fullscreen" parent="App.Theme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="App.Theme.Splash" parent="App.Theme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/welcome</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+
+    <!--cardview style-->
+    <style name="App.Theme.Widget.CardView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <!--Created by fei on 2016/5/19.-->
+    <style name="App.Theme.Widget.Button">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:background">@drawable/select_btn</item>
+        <item name="android:textColor">@color/app.theme.colorPrimary</item>
+    </style>
+
+    <style name="App.Theme.Widget.Button.Radio">
+        <item name="android:layout_height">25dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@drawable/select_btn_radio</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <!--textview-->
+    <style name="App.Theme.TextAppearance.ww.large.white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/app.text.xxxlarge</item>
+    </style>
+
+    <!--textview-->
+    <style name="App.Theme.TextAppearance.ww.tiny.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--linear-->
+
+    <style name="App.Theme.Linear.weight">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/selector_bg_white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="App.Theme.Relative.weight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_bg_item</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/app.padding.large13</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+</resources>

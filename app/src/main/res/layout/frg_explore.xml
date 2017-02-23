@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.explore.ExploreViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app.theme.background_f6f6f6"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/include_line_h"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="25dp" />
+
+        <LinearLayout
+            android:id="@+id/rl_soft"
+            style="@style/App.Theme.ripple.item"
+            app:clickCommand="@{viewModel.softClick}">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="@dimen/app.image.height.small"
+                android:layout_height="@dimen/app.image.height.small"
+                android:layout_marginRight="@dimen/app.margin.normal"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_discover_softwares" />
+
+            <TextView
+                style="@style/App.Theme.TextAppearance.item"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/app.explore.opensource" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_h" />
+
+        <include
+            layout="@layout/include_line_h"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="30dp" />
+
+        <LinearLayout
+            android:id="@+id/rl_scan"
+            style="@style/App.Theme.ripple.item"
+            app:clickCommand="@{viewModel.scanClick}">
+
+            <ImageView
+                android:layout_width="@dimen/app.image.height.small"
+                android:layout_height="@dimen/app.image.height.small"
+                android:layout_marginRight="@dimen/app.margin.normal"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_discover_scan" />
+
+            <TextView
+                style="@style/App.Theme.TextAppearance.item"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/app.explore.scan" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <include
+                layout="@layout/include_line_h"
+                android:layout_width="match_parent"
+                android:layout_height="1px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_shake"
+            style="@style/App.Theme.ripple.item"
+            app:clickCommand="@{viewModel.shakeClick}">
+
+            <ImageView
+                android:layout_width="@dimen/app.image.height.small"
+                android:layout_height="@dimen/app.image.height.small"
+                android:layout_marginRight="@dimen/app.margin.normal"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_discover_shake" />
+
+            <TextView
+                style="@style/App.Theme.TextAppearance.item"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/app.explore.shark" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+
+        <include
+            layout="@layout/include_line_h"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="30dp" />
+
+        <LinearLayout
+            android:id="@+id/rl_find_osc"
+            style="@style/App.Theme.ripple.item"
+            app:clickCommand="@{viewModel.activeClick}">
+
+            <ImageView
+                android:layout_width="@dimen/app.image.height.small"
+                android:layout_height="@dimen/app.image.height.small"
+                android:layout_marginRight="@dimen/app.margin.normal"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_my_event" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/App.Theme.TextAppearance.item"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/app.explore.active" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_arrow_right" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_h" />
+
+
+    </LinearLayout>
+</layout>

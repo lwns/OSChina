@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.photo.PhotoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/black">
+
+        <com.core.op.lib.weight.TouchImageView
+            android:id="@+id/photoview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:background="@color/transparent"
+            android:scaleType="fitCenter"
+            android:visibility="@{viewModel.optionVisible}"
+            app:clickCommand="@{viewModel.imageClick}"
+            app:onSuccessCommand="@{viewModel.onSuccessCommand}"
+            app:uri="@{viewModel.url}"
+            tools:src="@drawable/welcome"
+            tools:visibility="visible" />
+
+        <com.core.op.lib.weight.loading.Loading
+            android:id="@+id/indicator"
+            style="@style/App.Theme.Loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.loading}" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/app.margin.large"
+            android:padding="@dimen/app.padding.normal"
+            android:src="@drawable/ic_more_normal"
+            android:visibility="@{viewModel.optionVisible}"
+            app:clickCommand="@{viewModel.optionClick}" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.dialog.option.OptionViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/menu1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app.theme.background"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="保存"
+            android:textColor="@color/app.text.black"
+            android:textSize="18sp"
+            app:clickCommand="@{viewModel.saveClick}" />
+
+        <TextView
+            android:id="@+id/menu2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/menu1"
+            android:background="@color/app.theme.background"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="发送到动弹"
+            android:textColor="@color/app.text.black"
+            android:textSize="18sp"
+            app:clickCommand="@{viewModel.sendClick}" />
+
+        <TextView
+            android:id="@+id/menu3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/menu2"
+            android:background="@color/app.theme.background"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="复制图片链接"
+            android:textColor="@color/app.text.black"
+            android:textSize="18sp"
+            app:clickCommand="@{viewModel.copyClick}" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,182 @@
+<resources>
+    <string name="app.name">麦田</string>
+
+    <string name="empty"></string>
+
+    <string name="app.expect">敬请期待</string>
+
+    <!--DrawerLayout-->
+    <string name="app.drawer.open">打开</string>
+    <string name="app.drawer.close">关闭</string>
+
+    <!-- Title for tab_menu -->
+    <string name="app.menu.message">我的消息</string>
+    <string name="app.menu.blog">我的博客</string>
+    <string name="app.menu.action">我的活动</string>
+    <string name="app.menu.team">我的团队</string>
+
+    <string name="app.bottom.menu.new">综合</string>
+    <string name="app.bottom.menu.tweet">动弹</string>
+    <string name="app.bottom.menu.explore">发现</string>
+
+
+    <string name="app.new.tab.info">资讯</string>
+    <string name="app.new.tab.blog">博客</string>
+    <string name="app.new.tab.quesion">问答</string>
+    <string name="app.new.tab.active">活动</string>
+
+    <string name="app.tweet.tab.new">最新</string>
+    <string name="app.tweet.tab.hot">热门</string>
+    <string name="app.tweet.tab.mine">我的</string>
+
+    <string name="app.blog.tab.new">最新推荐</string>
+    <string name="app.blog.tab.hot">本周热门</string>
+    <string name="app.blog.tab.blog">最新博客</string>
+
+    <string name="app.software">开源软件</string>
+    <string name="app.software.detail">软件详情</string>
+    <string name="app.software.tab.recommend">推荐</string>
+    <string name="app.software.tab.new">最新</string>
+    <string name="app.software.tab.hot">热门</string>
+    <string name="app.software.tab.native">国产</string>
+    <string name="app.software.auth">软件作者:</string>
+    <string name="app.software.license">开源协议:</string>
+    <string name="app.software.language">开发语言:</string>
+    <string name="app.software.platform">操作系统:</string>
+    <string name="app.software.time">收录时间:</string>
+    <string name="app.software.license.no">无</string>
+
+    <string name="app.question.tab.question">提问</string>
+    <string name="app.question.tab.share">分享</string>
+    <string name="app.question.tab.composite">综合</string>
+    <string name="app.question.tab.job">职业</string>
+    <string name="app.question.tab.server">站务</string>
+
+    <string name="app.oscsite">官网</string>
+    <string name="app.active.status.singup">截止报名</string>
+    <string name="app.active.status.end">活动结束</string>
+    <string name="app.active.status.ing">正在报名</string>
+    <string name="app.active.type.osc">源创会</string>
+    <string name="app.active.type.tec">技术交流</string>
+    <string name="app.active.type.other">其他</string>
+    <string name="app.active.type.outside">站外活动</string>
+    <string name="app.active.type.join">人参与</string>
+
+    <string name="app.device.web">网页</string>
+    <string name="app.device.mobile">手机</string>
+    <string name="app.device.android">Android</string>
+    <string name="app.device.iphone">iPhone</string>
+    <string name="app.device.windowsphone">Windows Phone</string>
+    <string name="app.device.wechat">微信</string>
+
+    <string name="app.explore.opensource">开源软件</string>
+    <string name="app.explore.active">线下活动</string>
+    <string name="app.explore.scan">扫一扫</string>
+    <string name="app.explore.shark">摇一摇</string>
+
+    <string name="app.mine.tweet">动弹</string>
+    <string name="app.mine.favorite">收藏</string>
+    <string name="app.mine.attention">关注</string>
+    <string name="app.mine.follower">粉丝</string>
+    <string name="app.mine.tip.login">点击头像登陆</string>
+    <string name="app.mine.score">积分</string>
+    <string name="app.mine.head.title">选择操作</string>
+    <string name="app.mine.head.change.title">选择图片</string>
+    <string name="app.mine.head.save.tip">图片已保存(手机相册-> osc_img)</string>
+    <string name="app.mine.message">消息中心</string>
+    <string name="app.mine.blog">用户博客列表</string>
+
+    <string name="app.isfav">已收藏</string>
+    <string name="app.unfav">收藏</string>
+
+    <string name="app.detail.title">详情</string>
+    <string name="app.detail.software.about.hint">相关软件</string>
+    <string name="app.detail.software.comment.hint">相关评论</string>
+    <string name="app.detail.software.more.hint">更多评论</string>
+    <string name="app.detail.pub.about">发布于</string>
+
+
+    <string name="app.news.detail.title">资讯详情</string>
+    <string name="app.blog.detail.title">博客详情</string>
+    <string name="app.question.detail.title">问答详情</string>
+    <string name="app.tweet.detail.title">动弹详情</string>
+
+
+    <string name="app.active.detail.title">活动详情</string>
+    <string name="app.active.detail.comment">评论(%s)</string>
+    <string name="app.active.detail.author">发起人：%s</string>
+    <string name="app.active.detail.menber">%s人参与</string>
+    <string name="app.active.detail.type">类型：%s</string>
+
+    <string name="app.active.detail.status.end">活动结束</string>
+    <string name="app.active.detail.status.ing">正在报名</string>
+    <string name="app.active.detail.status.sing.up">截止报名</string>
+    <string name="app.active.detail.type.osc">源创会</string>
+    <string name="app.active.detail.type.tec">技术交流</string>
+    <string name="app.active.detail.type.other">其他</string>
+    <string name="app.active.detail.type.outside">站外活动</string>
+    <string name="app.active.detail.type.outline">线下活动</string>
+    <string name="app.active.detail.sign.hint">活动报名</string>
+
+    <string name="app.active.apply.status.unsign">我要报名</string>
+    <string name="app.active.apply.status.audit">审核中</string>
+    <string name="app.active.apply.status.confirmed">已确认</string>
+    <string name="app.active.apply.status.presented">已出席</string>
+    <string name="app.active.apply.status.canceled">已取消</string>
+    <string name="app.active.apply.status.refused">已拒绝</string>
+
+    <string name="app.setting">设置</string>
+    <string name="app.setting.clear">清理缓存</string>
+    <string name="app.setting.idea">意见反馈</string>
+    <string name="app.setting.about">关于我们</string>
+    <string name="app.setting.update">检查更新</string>
+    <string name="app.setting.logoff">注销</string>
+
+    <string name="app.scan">扫一扫</string>
+
+    <string name="app.shake">摇一摇</string>
+    <string name="app.shake.state.tip">摇一摇获取资讯</string>
+    <string name="app.shake.state.ing">正在搜寻资讯</string>
+    <string name="app.shake.state.fail">很遗憾，你没有摇到资讯，请再试一次</string>
+
+    <string name="app.scan.tip">将二维码/条码放入框内，即可自动扫描</string>
+
+    <string name="app.pub">弹一弹</string>
+    <string name="app.pub.empty">内容不能为空</string>
+    <string name="app.pub.long">内容太长</string>
+    <string name="app.pub.send.success">动态发布成功</string>
+    <string name="app.pub.send.fail">动态发布失败</string>
+
+    <string name="app.login.login">登陆</string>
+    <string name="app.login.error">请先登陆！</string>
+
+    <string-array name="app_mine_head_select">
+        <item>更换头像</item>
+        <item>查看大头像</item>
+    </string-array>
+
+    <string-array name="app_mine_head_chang">
+        <item>相册</item>
+        <item>相机</item>
+    </string-array>
+
+
+    <array name="new_tabs">
+        <item>@string/app.new.tab.info</item>
+        <item>@string/app.new.tab.blog</item>
+        <item>@string/app.new.tab.quesion</item>
+        <item>@string/app.new.tab.active</item>
+    </array>
+
+    <array name="software_tabs">
+        <item>@string/app.software.tab.recommend</item>
+        <item>@string/app.software.tab.new</item>
+        <item>@string/app.software.tab.hot</item>
+        <item>@string/app.software.tab.native</item>
+    </array>
+    <array name="tweet_tabs">
+        <item>@string/app.tweet.tab.new</item>
+        <item>@string/app.tweet.tab.hot</item>
+        <item>@string/app.tweet.tab.mine</item>
+    </array>
+</resources>

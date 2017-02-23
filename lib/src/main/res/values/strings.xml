@@ -1,0 +1,22 @@
+<resources>
+    <string name="app.lib">lib</string>
+
+    <string name="app.no.network">当前没有可用的网络链接</string>
+    <string name="app.permission.camer.refuse">拒绝相机调用！</string>
+
+
+    <string name="app.loading">加载中…</string>
+    <string name="app.loading.no.data">暂无内容</string>
+    <string name="app.loading.refresh">内容加载失败\r\n点击重新加载</string>
+    <string name="app.loading.network.error">没有可用的网络</string>
+
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+
+</resources>

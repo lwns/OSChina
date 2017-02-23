@@ -1,0 +1,5 @@
+include ':app', ':third_party'
+include ':domain'
+include ':data'
+include ':lib'
+//include ':weight'

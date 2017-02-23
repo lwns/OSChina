@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.back.shake.ShakeViewModel" />
+
+        <import type="com.core.op.lib.utils.DateUtil" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f6f6f6"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/app.padding.large30">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/app.margin.large"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/app.padding.large">
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/ic_shake" />
+
+                <com.core.op.lib.weight.loading.Loading
+                    android:id="@+id/loading"
+                    style="@style/App.Theme.Loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/app.margin.large"
+                    android:visibility="@{viewModel.loading}" />
+
+                <TextView
+                    android:id="@+id/tv_state"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/app.margin.large"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:lines="2"
+                    android:text="@{viewModel.state}"
+                    android:visibility="@{viewModel.stateVisible}" />
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_shake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="16dp"
+                android:background="@color/white"
+                android:visibility="@{viewModel.cardVisible}"
+                app:clickCommand="@{viewModel.click}">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/shape_shake_img_border"
+                        android:padding="1dp">
+
+                        <ImageView
+                            android:id="@+id/iv_news"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            app:uri="@{viewModel.shakeNews.img}"
+                            tools:src="@drawable/ic_launcher" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/app.margin.normal"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_news_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="2dp"
+                            android:maxLines="2"
+                            android:text="@{viewModel.shakeNews.name}"
+                            android:textColor="#111111"
+                            android:textSize="16sp"
+                            tools:text="大数据方法分析大数据" />
+
+                        <TextView
+                            android:id="@+id/tv_t"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@{DateUtil.formatSomeAgo(viewModel.shakeNews.pubDate)}"
+                            android:textColor="#9d9d9d"
+                            android:textSize="@dimen/app.text.small"
+                            tools:text="20分钟前" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/app.image.height.small"
+                        android:layout_height="@dimen/app.image.height.small"
+                        android:layout_marginLeft="@dimen/app.margin.normal"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@{viewModel.time}"
+                android:visibility="@{viewModel.timeVisible}" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_h" />
+
+        ？
+    </LinearLayout>
+</layout>

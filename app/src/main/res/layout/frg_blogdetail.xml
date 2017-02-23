@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.detail.blog.frg.BlogDetailViewModel" />
+
+        <import type="com.core.op.lib.utils.DateUtil" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <import type="com.core.op.bindingadapter.common.LayoutManagers" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/lay_nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lay_option"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="46dp"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll|enterAlways"
+        tools:ignore="RtlHardcoded">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fcfcfc"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp">
+
+                <com.core.op.lib.weight.CircleImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/widget_dface"
+                    app:uri="@{viewModel.data.authorPortrait}" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.data.author}"
+                        android:textColor="#111111"
+                        android:textSize="14sp"
+                        tools:text="年轻的小蜜蜂" />
+
+                    <TextView
+                        android:id="@+id/tv_pub_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{DateUtil.formatSomeAgo(viewModel.data.pubDate)}"
+                        android:textColor="#6a6a6a"
+                        android:textSize="12sp"
+                        tools:text="发表于1天前 (2016-06-24 20:12)" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_relation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:background="@drawable/select_btn_1"
+                    android:minWidth="48dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    tools:text="关注" />
+            </LinearLayout>
+
+            <include layout="@layout/include_line_h" />
+            <!--推荐 or 原创-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_label_recommend"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="4dp"
+                    android:contentDescription="@string/empty"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_label_recommend"
+                    android:visibility="@{viewModel.data.recommend ? View.VISIBLE : View.GONE}"
+                    tools:ignore="RtlHardcoded" />
+
+                <ImageView
+                    android:id="@+id/iv_label_originate"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/empty"
+                    android:scaleType="fitCenter"
+                    android:src="@{viewModel.data.original?@drawable/ic_label_originate:@drawable/ic_label_reprint}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/app.padding.large13"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:maxLines="2"
+                    android:text="@{viewModel.data.title}"
+                    android:textColor="#111111"
+                    android:textSize="18sp"
+                    tools:text="Webpack从零开始" />
+
+                <!--         <include
+                android:id="@+id/lay_info_view_comment"
+                layout="@layout/include_info_view_comment" />-->
+
+
+                <include layout="@layout/include_line_h" />
+                <!--摘要-->
+                <LinearLayout
+                    android:id="@+id/lay_blog_detail_abstract"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="@{TextUtils.isEmpty(viewModel.data.abstractStr)?View.GONE:View.VISIBLE}">
+
+                    <TextView
+                        android:id="@+id/tv_blog_detail_abstract"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4dp"
+                        android:maxLines="6"
+                        android:text="@{viewModel.data.abstractStr}"
+                        android:textColor="#6a6a6a"
+                        android:textSize="14sp"
+                        tools:text="在Google IO大会中不仅仅带来了Android Studio 2.2预览版，同时带给我们一个依赖约束的库。 简单来说，她是相对布局的升级版本，但是区别与相对布局更加强调约束。何为约束，即控件之间的关系。" />
+
+                </LinearLayout>
+
+                <include layout="@layout/include_line_h" />
+            </LinearLayout>
+
+            <com.core.op.lib.weight.OWebView
+                android:id="@+id/lay_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:body="@{viewModel.data.body}"
+                app:finishCommand="@{viewModel.finishCommand}"></com.core.op.lib.weight.OWebView>
+
+            <include layout="@layout/include_line_h" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="HardcodedText">
+
+                <TextView
+                    android:id="@+id/tv_blog_detail_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="相关推荐"
+                    android:textColor="@color/app.text.black6a6a6a"
+                    android:textSize="14sp" />
+
+
+                <include layout="@layout/include_line_h" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:itemView="@{viewModel.aboutItemView}"
+                    app:items="@{viewModel.abouts}"
+                    app:layoutManager="@{LayoutManagers.nestLinear()}" />
+
+                <include layout="@layout/include_line_h" />
+            </LinearLayout>
+
+            <!--<include-->
+            <!--android:id="@+id/inc_about"-->
+            <!--layout="@layout/include_detail_about_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:viewModel="@{viewModel}" />-->
+
+            <!--<include layout="@layout/include_detail_comment_layout" />-->
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

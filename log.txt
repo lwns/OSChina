@@ -1,0 +1,38 @@
+Removing daemon from the registry due to communication failure. Daemon information: DaemonInfo{pid=6216, address=[57511e5b-95d1-4bb7-b159-a7a87c43002d port:61013, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], idle=true, context=DefaultDaemonContext[uid=0f8544f8-0a91-4bbf-a6fd-cef6a845ac26,javaHome=D:\Program Files\Java\jdk1.8.0_31,daemonRegistryDir=C:\Users\op\.gradle\daemon,pid=6216,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=CN,-Duser.language=zh,-Duser.variant]}
+Starting Gradle daemon
+Starting daemon process: workingDir = C:\Users\op\.gradle\daemon\2.3, daemonArgs: [D:\Program Files\Java\jdk1.8.0_31\bin\java.exe, -XX:MaxPermSize=512m, -XX:+HeapDumpOnOutOfMemoryError, -Xmx2048m, -Dfile.encoding=UTF-8, -Duser.country=CN, -Duser.language=zh, -Duser.variant, -cp, E:\android\android studio\gradle-2.3\lib\gradle-launcher-2.3.jar, org.gradle.launcher.daemon.bootstrap.GradleDaemon, 2.3, C:\Users\op\.gradle\daemon, 10800000, 9df4fbbe-2c85-4ca9-932c-186acd439766, -XX:MaxPermSize=512m, -XX:+HeapDumpOnOutOfMemoryError, -Xmx2048m, -Dfile.encoding=UTF-8, -Duser.country=CN, -Duser.language=zh, -Duser.variant]
+Starting process 'Gradle build daemon'. Working directory: C:\Users\op\.gradle\daemon\2.3 Command: D:\Program Files\Java\jdk1.8.0_31\bin\java.exe -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country=CN -Duser.language=zh -Duser.variant -cp E:\android\android studio\gradle-2.3\lib\gradle-launcher-2.3.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 2.3 C:\Users\op\.gradle\daemon 10800000 9df4fbbe-2c85-4ca9-932c-186acd439766 -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country=CN -Duser.language=zh -Duser.variant
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 1.885 secs.
+Connected to daemon DaemonInfo{pid=8324, address=[01cb4124-cdcf-4353-a781-75c62109259b port:58611, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], idle=false, context=DefaultDaemonContext[uid=9df4fbbe-2c85-4ca9-932c-186acd439766,javaHome=D:\Program Files\Java\jdk1.8.0_31,daemonRegistryDir=C:\Users\op\.gradle\daemon,pid=8324,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=CN,-Duser.language=zh,-Duser.variant]}. Dispatching request Build{id=bd70db4a-7987-4343-bb97-a0e33415fbdf.1, currentDir=E:\git_op\shbank}.
+The client will now receive all logging from the daemon (pid: 8324). The daemon log file: C:\Users\op\.gradle\daemon\2.3\daemon-8324.out.log
+Starting build in new daemon [memory: 1.9 GB]
+Executing build with daemon context: DefaultDaemonContext[uid=9df4fbbe-2c85-4ca9-932c-186acd439766,javaHome=D:\Program Files\Java\jdk1.8.0_31,daemonRegistryDir=C:\Users\op\.gradle\daemon,pid=8324,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=CN,-Duser.language=zh,-Duser.variant]
+Starting Build
+Settings evaluated using settings file 'E:\git_op\shbank\settings.gradle'.
+Projects loaded. Root project using build file 'E:\git_op\shbank\build.gradle'.
+Included projects: [root project 'shbank', project ':app', project ':data', project ':domain', project ':lib']
+Parallel execution with configuration on demand is an incubating feature.
+Evaluating root project 'shbank' using build file 'E:\git_op\shbank\build.gradle'.
+Evaluating project ':app' using build file 'E:\git_op\shbank\app\build.gradle'.
+Compiling build file 'E:\git_op\shbank\app\build.gradle' using StatementExtractingScriptTransformer.
+Compiling build file 'E:\git_op\shbank\app\build.gradle' using BuildScriptTransformer.
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file 'E:\git_op\shbank\app\build.gradle' line: 1
+
+* What went wrong:
+A problem occurred evaluating project ':app'.
+> Failed to apply plugin [id 'com.android.application']
+   > Minimum supported Gradle version is 2.14.1. Current version is 2.3. If using the gradle wrapper, try editing the distributionUrl in E:\git_op\shbank\gradle\wrapper\gradle-wrapper.properties to gradle-2.14.1-all.zip
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 10.505 secs
+Received result DaemonCommandResult[type=CommandFailure, value=org.gradle.launcher.exec.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Build file 'E:\git_op\shbank\app\build.gradle' line: 1
+A problem occurred evaluating project ':app'.] from daemon DaemonInfo{pid=8324, address=[01cb4124-cdcf-4353-a781-75c62109259b port:58611, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], idle=false, context=DefaultDaemonContext[uid=9df4fbbe-2c85-4ca9-932c-186acd439766,javaHome=D:\Program Files\Java\jdk1.8.0_31,daemonRegistryDir=C:\Users\op\.gradle\daemon,pid=8324,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=CN,-Duser.language=zh,-Duser.variant]}.

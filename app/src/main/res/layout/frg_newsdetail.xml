@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.detail.news.frg.NewsDetailViewModel" />
+
+        <import type="android.view.View" />
+
+        <import type="com.core.op.bindingadapter.common.LayoutManagers" />
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/lay_nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lay_option"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="46dp"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll|enterAlways"
+        tools:ignore="RtlHardcoded">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/app.padding.large13"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:maxLines="2"
+                    android:text="@{viewModel.data.title}"
+                    android:textColor="#111111"
+                    android:textSize="18sp"
+                    tools:text="Webpack从零开始" />
+
+                <!--         <include
+                             android:id="@+id/lay_info_view_comment"
+                             layout="@layout/include_info_view_comment" />-->
+
+            </LinearLayout>
+
+            <com.core.op.lib.weight.OWebView
+                android:id="@+id/lay_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:body="@{viewModel.data.body}"
+                app:finishCommand="@{viewModel.finishCommand}"></com.core.op.lib.weight.OWebView>
+
+            <LinearLayout
+                android:id="@+id/lay_about_software"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.data.software==null?View.GONE:View.VISIBLE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/app.detail.software.about.hint"
+                    android:textColor="#6a6a6a"
+                    android:textSize="12sp" />
+
+                <include layout="@layout/include_line_h" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_about_software_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:paddingRight="16dp"
+                        android:text="@{viewModel.data.software.name}"
+                        android:textColor="#111111"
+                        android:textSize="14sp"
+                        tools:ignore="RtlHardcoded,RtlSymmetry"
+                        tools:text="使用webpack前端重构感受" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_right" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/include_line_h" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="HardcodedText">
+
+                <TextView
+                    android:id="@+id/tv_blog_detail_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="相关推荐"
+                    android:textColor="@color/app.text.black6a6a6a"
+                    android:textSize="14sp" />
+
+
+                <include layout="@layout/include_line_h" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:itemView="@{viewModel.aboutItemView}"
+                    app:items="@{viewModel.abouts}"
+                    app:layoutManager="@{LayoutManagers.nestLinear()}" />
+
+                <include layout="@layout/include_line_h" />
+            </LinearLayout>
+            <!--<include-->
+            <!--android:id="@+id/inc_about"-->
+            <!--layout="@layout/include_detail_about_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:viewModel="@{viewModel}" />-->
+
+            <!--<include layout="@layout/include_detail_comment_layout" />-->
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.MainViewModel" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        tools:context="com.core.op.feature.main.MainActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:title="@{viewModel.title}"
+                android:titleTextColor="@color/white"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="72dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_content_add"
+            android:visibility="visible"
+            app:clickCommand="@{viewModel.pubClick}"
+            app:layout_anchorGravity="bottom|right|end"
+            app:layout_behavior="com.core.op.lib.weight.behavior.ScrollAwareFABBehavior" />
+
+        <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:navigation="@{viewModel.navigation}"
+            app:onTabSelectedCommand="@{viewModel.selectedCommand}" />
+
+        <com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:fragments="@{viewModel.fragments}"
+            app:frgManager="@{viewModel.fragmentManager}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:pageLimit="@{viewModel.pageLimit}"
+            app:selectPosition="@{viewModel.selectPosition}" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

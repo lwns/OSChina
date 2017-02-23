@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <!--<variable-->
+        <!--name="itemView"-->
+        <!--type="com.core.op.bindingadapter.common.ItemViewArg" />-->
+
+        <!--<variable-->
+        <!--name="itemViewModel"-->
+        <!--type="java.util.List" />-->
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.detail.news.frg.NewsDetailViewModel" />
+
+
+        <import type="com.core.op.bindingadapter.common.LayoutManagers" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:id="@+id/tv_blog_detail_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:text="相关推荐"
+            android:textColor="@color/app.text.black6a6a6a"
+            android:textSize="14sp" />
+
+
+        <include layout="@layout/include_line_h" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:itemView="@{viewModel.aboutItemView}"
+            app:items="@{viewModel.abouts}"
+            app:layoutManager="@{LayoutManagers.nestLinear()}" />
+
+        <include layout="@layout/include_line_h" />
+    </LinearLayout>
+
+</layout>

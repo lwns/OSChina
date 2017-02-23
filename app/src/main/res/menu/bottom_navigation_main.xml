@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/tab_icon_new"
+        android:title="@string/app.bottom.menu.new" />
+
+    <item
+        android:icon="@drawable/tab_icon_tweet"
+        android:title="@string/app.bottom.menu.tweet" />
+
+    <item
+        android:icon="@drawable/tab_icon_explore"
+        android:title="@string/app.bottom.menu.explore" />
+
+</menu>

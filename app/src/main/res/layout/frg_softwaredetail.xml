@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.detail.software.frg.SoftwareDetailViewModel" />
+
+
+        <import type="com.core.op.lib.utils.DateUtil" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <import type="com.core.op.bindingadapter.common.LayoutManagers" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/lay_nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lay_option"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="46dp"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll|enterAlways"
+        tools:ignore="RtlHardcoded">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fcfcfc">
+
+                <ImageView
+                    android:id="@+id/iv_label_recommend"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/empty"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_label_recommend"
+                    android:visibility="@{viewModel.data.recommend?View.VISIBLE:View.INVISIBLE}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fcfcfc"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ImageView
+                    android:id="@+id/iv_software_icon"
+                    android:layout_width="@dimen/app.image.height.normal40"
+                    android:layout_height="@dimen/app.image.height.normal40"
+                    android:contentDescription="@string/empty"
+                    app:uri="@{viewModel.data.logo}"
+                    tools:contentDescription="icon" />
+
+                <TextView
+                    android:id="@+id/tv_software_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/app.image.height.normal40"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/app.margin.normal"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="2dp"
+                    android:maxLines="2"
+                    android:minLines="1"
+                    android:text="@{viewModel.name}"
+                    android:textColor="#111111"
+                    android:textSize="16sp"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="在Google IO大会中不仅仅带来了间的" />
+
+            </LinearLayout>
+
+            <include layout="@layout/include_line_h" />
+
+            <com.core.op.lib.weight.OWebView
+                android:id="@+id/lay_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:body="@{viewModel.data.body}"
+                app:finishCommand="@{viewModel.finishCommand}"></com.core.op.lib.weight.OWebView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/app.padding.normal"
+                android:paddingLeft="@dimen/app.padding.large"
+                android:paddingRight="@dimen/app.padding.large"
+                android:paddingTop="@dimen/app.padding.large">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="@string/app.software.auth"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small" />
+
+                <TextView
+                    android:id="@+id/tv_software_author_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/app.margin.large"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="@{viewModel.author}"
+                    android:textColor="@color/app.theme.colorPrimary"
+                    android:textSize="@dimen/app.text.small"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="so_white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/app.padding.normal"
+                android:paddingLeft="@dimen/app.padding.large"
+                android:paddingRight="@dimen/app.padding.large">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app.software.license"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small" />
+
+                <TextView
+                    android:id="@+id/tv_software_law"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/app.margin.large"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="@{viewModel.license}"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="Apache" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/app.padding.normal"
+                android:paddingLeft="@dimen/app.padding.large"
+                android:paddingRight="@dimen/app.padding.large">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app.software.language"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small" />
+
+                <TextView
+                    android:id="@+id/tv_software_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/app.margin.large"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="@{viewModel.data.language}"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="Java" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/app.padding.normal"
+                android:paddingLeft="@dimen/app.padding.large"
+                android:paddingRight="@dimen/app.padding.large">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app.software.platform"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small" />
+
+                <TextView
+                    android:id="@+id/tv_software_system"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/app.margin.large"
+                    android:text="@{viewModel.data.supportOS}"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="Lin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/app.padding.normal"
+                android:paddingLeft="@dimen/app.padding.large"
+                android:paddingRight="@dimen/app.padding.large">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app.software.time"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small" />
+
+                <TextView
+                    android:id="@+id/tv_software_record_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/app.margin.large"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="@{viewModel.data.collectionDate}"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/app.text.small"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="2015-01-12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="HardcodedText">
+
+                <TextView
+                    android:id="@+id/tv_blog_detail_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="相关推荐"
+                    android:textColor="@color/app.text.black6a6a6a"
+                    android:textSize="14sp" />
+
+
+                <include layout="@layout/include_line_h" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:itemView="@{viewModel.aboutItemView}"
+                    app:items="@{viewModel.abouts}"
+                    app:layoutManager="@{LayoutManagers.nestLinear()}" />
+
+                <include layout="@layout/include_line_h" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

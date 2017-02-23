@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.news.blog.BlogItemViewModel" />
+
+        <import type="com.core.op.lib.utils.DateUtil" />
+
+        <import type="java.lang.String" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:clickCommand="@{viewModel.itemClick}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_item_blog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="@{viewModel.spannable}"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/app.text.black"
+                    android:textSize="16sp"
+                    tools:text="Large Text" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_item_blog_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="4dp"
+                android:maxLines="3"
+                android:minLines="1"
+                android:text="@{viewModel.blog.body.trim()}"
+                android:textSize="14sp"
+                tools:text="New Text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_item_blog_history"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:gravity="left"
+                    android:lines="1"
+                    android:text="@{viewModel.author}"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/app.text.black9d9d9d"
+                    android:textSize="12sp"
+                    tools:text="2012-12-01 22:10" />
+
+                <include
+                    layout="@layout/include_info_view_comment"
+                    app:comment="@{String.valueOf(viewModel.blog.commentCount)}"
+                    app:viewer="@{String.valueOf(viewModel.blog.viewCount)}" />
+
+            </LinearLayout>
+
+            <include layout="@layout/include_line_h" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.back.setting.SettingViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app.theme.background_f6f6f6"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/app.margin.large">
+
+            <include layout="@layout/include_line_h" />
+
+            <RelativeLayout
+                android:id="@+id/rl_clean"
+                style="@style/App.Theme.Relative.weight"
+                app:clickCommand="@{viewModel.cleanClick}">
+
+                <TextView
+                    style="@style/App.Theme.TextAppearance.ww.normal"
+                    android:text="@string/app.setting.clear"
+                    android:textColor="@color/app.text.black" />
+
+                <TextView
+                    android:id="@+id/tv_clean"
+                    style="@style/App.Theme.TextAppearance.ww.small"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/app.text.black.alpha.45"
+                    tools:text="13M" />
+            </RelativeLayout>
+
+            <include layout="@layout/include_line_h" />
+
+            <include
+                layout="@layout/include_line_h"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="@dimen/app.margin.large" />
+
+            <RelativeLayout
+                android:id="@+id/rl_idea"
+                style="@style/App.Theme.Relative.weight"
+                app:clickCommand="@{viewModel.ideaClick}">
+
+                <TextView
+                    style="@style/App.Theme.TextAppearance.ww.normal"
+                    android:text="@string/app.setting.idea"
+                    android:textColor="@color/app.text.black" />
+            </RelativeLayout>
+
+            <include layout="@layout/include_line_h" />
+
+            <RelativeLayout
+                android:id="@+id/rl_about"
+                style="@style/App.Theme.Relative.weight"
+                app:clickCommand="@{viewModel.aboutClick}">
+
+                <TextView
+                    style="@style/App.Theme.TextAppearance.ww.normal"
+                    android:text="@string/app.setting.about"
+                    android:textColor="@color/app.text.black" />
+            </RelativeLayout>
+
+            <include layout="@layout/include_line_h" />
+
+            <RelativeLayout
+                android:id="@+id/rl_update"
+                style="@style/App.Theme.Relative.weight"
+                app:clickCommand="@{viewModel.updateClick}">
+
+                <TextView
+                    style="@style/App.Theme.TextAppearance.ww.normal"
+                    android:text="@string/app.setting.update"
+                    android:textColor="@color/app.text.black" />
+            </RelativeLayout>
+
+            <include layout="@layout/include_line_h" />
+
+
+            <include
+                layout="@layout/include_line_h"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="@dimen/app.margin.large" />
+
+            <RelativeLayout
+                android:id="@+id/rl_logoff"
+                style="@style/App.Theme.Relative.weight"
+                app:clickCommand="@{viewModel.exitClick}">
+
+                <TextView
+                    style="@style/App.Theme.TextAppearance.ww.normal"
+                    android:text="@string/app.setting.logoff"
+                    android:textColor="@color/app.text.black" />
+            </RelativeLayout>
+
+            <include layout="@layout/include_line_h" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

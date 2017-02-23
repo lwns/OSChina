@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.back.pub.PubViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/app.padding.large"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <EditText
+            android:id="@+id/edit_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="start|left|top"
+            android:hint="今天想动弹什么?"
+            android:minLines="10"
+            android:paddingBottom="@dimen/app.padding.large"
+            android:textColor="#111111"
+            android:textSize="@dimen/app.text.normal" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="60dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_send_light"
+            android:visibility="visible"
+            app:clickCommand="@{viewModel.sendClick}" />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--zxing-->
+    <item name="decode" type="id" />
+    <item name="decode_failed" type="id" />
+    <item name="decode_succeeded" type="id" />
+    <item name="restart_preview" type="id" />
+    <item name="quit" type="id" />
+    <item name="return_scan_result" type="id" />
+
+
+    <item name="toolbar" type="id" />
+    <item name="recycler_view" type="id" />
+    <item name="progress_bar" type="id" />
+    <attr name="textColor" format="reference" />
+    <item name="text_view_summary" type="id" />
+    <item name="text_view_empty" type="id" />
+
+    <item name="container" type="id" /><!--fragment-->
+
+    <item name="input_emoji" type="id" /><!--emoji edittext-->
+</resources>
