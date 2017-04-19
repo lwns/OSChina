@@ -47,3 +47,7 @@ dependencies {
     compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
 
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

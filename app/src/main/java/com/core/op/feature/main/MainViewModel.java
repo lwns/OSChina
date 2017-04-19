@@ -46,9 +46,9 @@ public class MainViewModel extends BAViewModel<ActMainBinding> {
     public final NavigationRes navigation = NavigationRes.of(R.array.tab_colors, R.menu.bottom_navigation_main).setAccent(R.color.app_theme_colorPrimary);
 
     public final ReplyCommand pubClick = new ReplyCommand(() -> {
-//        SimpleBackActivity.instance(activity, SimpleBackPage.PUB);
+        SimpleBackActivity.instance(activity, SimpleBackPage.PUB);
 
-        dialog.show();
+//        dialog.show();
     });
 
     public final ReplyCommand<ViewBindingAdapter.NavigationDataWrapper> selectedCommand = new ReplyCommand<>(p -> {

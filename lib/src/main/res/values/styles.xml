@@ -5,7 +5,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:windowIsTranslucent">true</item><!--窗体透明-->
+        <!--<item name="android:windowIsTranslucent">true</item>&lt;!&ndash;窗体透明&ndash;&gt;-->
         <item name="colorPrimary">@color/app.theme.colorPrimary</item>
         <item name="colorPrimaryDark">@color/app.theme.colorPrimaryDark</item>
         <item name="colorAccent">@color/app.theme.colorAccent</item>

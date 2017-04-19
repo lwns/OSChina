@@ -59,6 +59,10 @@ dependencies {
 
     compile 'com.jakewharton.timber:timber:4.1.2'
 }
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
 
 //uploadArchives {
 //    configuration = configurations.archives

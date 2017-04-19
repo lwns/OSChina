@@ -28,3 +28,7 @@ dependencies {
     })
     compile compiles.supportAppCompat
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

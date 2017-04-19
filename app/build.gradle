@@ -115,3 +115,7 @@ dependencies {
     releaseCompile release.leakcanary
     testCompile release.leakcanary
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
