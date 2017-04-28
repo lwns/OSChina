@@ -3,7 +3,6 @@ package com.core.op.lib.base;
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.databinding.tool.writer.KCode;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.core.op.lib.AppException;
-import com.core.op.lib.di.PerActivity;
 import com.core.op.lib.utils.inject.InjectUtil;
 import com.trello.rxlifecycle.components.support.RxFragment;
 

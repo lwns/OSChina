@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/app.navigation.head.height"
         android:clickable="true"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="false">
 
         <com.core.op.lib.weight.SolarSystemView
             android:id="@+id/user_view_solar_system"

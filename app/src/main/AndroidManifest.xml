@@ -92,7 +92,8 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".view.impl.Message" />
-        <activity android:name=".view.impl.Blog"></activity>
+        <activity android:name=".view.impl.Blog" />
+        <activity android:name=".Test"></activity>
     </application>
 
 </manifest>

@@ -34,6 +34,7 @@ android {
             dirs 'libs'
         }
     }
+    buildToolsVersion '25.0.2'
 }
 
 

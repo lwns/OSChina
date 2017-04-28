@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
 def ext = rootProject.ext
@@ -91,6 +90,7 @@ android {
             }
         }
     }
+    buildToolsVersion '25.0.2'
 }
 
 dependencies {
@@ -105,11 +105,8 @@ dependencies {
     compile project(':third_party')
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    apt provides.daggerCompiler
+    annotationProcessor provides.daggerCompiler
     provided provides.annotation
-
-    apt apts.logansquareCompiler
-
 
     debugCompile compiles.leakcanary
     releaseCompile release.leakcanary
