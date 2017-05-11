@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import javax.inject.Inject;
 
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
 
 @PerActivity
 public class SplashViewModel extends BAViewModel<ActSplashBinding> {
@@ -25,7 +26,9 @@ public class SplashViewModel extends BAViewModel<ActSplashBinding> {
 
     @Override
     public void afterViews() {
-        Observable.timer(1, TimeUnit.SECONDS).subscribe(data -> {
+        Observable.timer(1, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(data -> {
             MainActivity.instance(activity);
             activity.finish();
         });
