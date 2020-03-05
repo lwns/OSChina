@@ -1,10 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'me.tatarka.retrolambda'
 def ext = rootProject.ext
 
 android {
     compileSdkVersion ext.compileSdkVersion
-    buildToolsVersion ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 15
@@ -34,7 +32,6 @@ android {
             dirs 'libs'
         }
     }
-    buildToolsVersion '25.0.2'
 }
 
 

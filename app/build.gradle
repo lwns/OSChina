@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
 
 def ext = rootProject.ext
 
@@ -9,7 +8,6 @@ def releaseTime() {
 
 android {
     compileSdkVersion ext.compileSdkVersion
-    buildToolsVersion ext.buildToolsVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -22,7 +20,7 @@ android {
         targetSdkVersion ext.targetSdkVersion
         versionCode ext.versionCode
         versionName ext.versionName
-        multiDexEnabled true
+//        multiDexEnabled true
     }
 
     packagingOptions {
@@ -80,17 +78,16 @@ android {
 
             applicationVariants.all { variant ->
                 variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        // 输出apk名称为appname-1.0-beta1-xxxx-xx-xx.apk
-                        def fileName = "app-${defaultConfig.versionName}-${releaseTime()}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
+//                    def outputFile = output.outputFile
+//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                        // 输出apk名称为appname-1.0-beta1-xxxx-xx-xx.apk
+//                        def fileName = "app-${defaultConfig.versionName}-${releaseTime()}.apk"
+//                        output.outputFile = new File(outputFile.parent, fileName)
+//                    }
                 }
             }
         }
     }
-    buildToolsVersion '25.0.2'
 }
 
 dependencies {
@@ -105,12 +102,28 @@ dependencies {
     compile project(':third_party')
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+//    implementation 'com.timper:lonelysword:0.0.6'
+//    annotationProcessor 'com.timper:lonelysword-compiler:0.0.6'
+
     annotationProcessor provides.daggerCompiler
     provided provides.annotation
+
 
     debugCompile compiles.leakcanary
     releaseCompile release.leakcanary
     testCompile release.leakcanary
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                //这里写你想统一的版本是多少，前提是你sdk里有
+                details.useVersion '25.0.0'
+            }
+        }
+    }
 }
 
 tasks.withType(JavaCompile) {

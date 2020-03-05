@@ -1,4 +1,5 @@
 <resources>
+    <string name="app">麦田</string>
     <string name="app.name">麦田</string>
 
     <string name="empty"></string>

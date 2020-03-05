@@ -3,7 +3,6 @@ def ext = rootProject.ext
 
 android {
     compileSdkVersion ext.compileSdkVersion
-    buildToolsVersion ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 15
@@ -18,16 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion '25.0.2'
 }
 
 dependencies {
     def compiles = ext.compiles
+  compile compiles.supportAppCompat
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile compiles.supportAppCompat
 }
 
 tasks.withType(JavaCompile) {

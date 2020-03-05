@@ -25,7 +25,7 @@
         android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app.name"
+        android:label="@string/app"
         android:supportsRtl="true"
         android:theme="@style/App.Theme.Context">
         <activity
@@ -91,9 +91,6 @@
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".view.impl.Message" />
-        <activity android:name=".view.impl.Blog" />
-        <activity android:name=".Test"></activity>
     </application>
 
 </manifest>

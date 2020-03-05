@@ -1,11 +1,9 @@
 apply plugin: 'com.android.library'
-apply plugin: 'me.tatarka.retrolambda'
 
 def ext = rootProject.ext
 
 android {
     compileSdkVersion ext.compileSdkVersion
-    buildToolsVersion ext.buildToolsVersion
 
     defaultConfig {
         versionCode ext.versionCode
@@ -21,10 +19,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildToolsVersion '25.0.2'
-}
-retrolambda {
-    javaVersion JavaVersion.VERSION_1_7
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
